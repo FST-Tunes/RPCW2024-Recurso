@@ -1,0 +1,61 @@
+1.
+
+SELECT (COUNT(?book) AS ?numBooks)
+WHERE {
+  ?book rdf:type :Book .
+}
+
+2.
+
+SELECT ?title
+WHERE {
+    ?book a :Book ;
+          :title ?title ;
+          :hasAuthor ?author .
+    ?author :lastName "Austen" .
+}
+ORDER BY ?title
+
+3.
+
+SELECT ?genre (COUNT(?book) AS ?numBooks)
+WHERE {
+    ?book a :Book ;
+          :hasGenre ?genre .
+}
+GROUP BY ?genre
+ORDER BY ?genre
+
+4.
+
+SELECT ?characterName (GROUP_CONCAT(?title; SEPARATOR=", ") AS ?books)
+WHERE {
+    ?book a :Book ;
+          :title ?title ;
+          :hasCharacter ?character .
+    ?character :name ?characterName .
+}
+GROUP BY ?characterName
+ORDER BY ?characterName
+
+5.
+
+SELECT ?authorName (COUNT(?book) AS ?numBooks)
+WHERE {
+    ?book a :Book ;
+          :hasAuthor ?author .
+    ?author :lastName ?authorName .
+}
+GROUP BY ?authorName
+ORDER BY ?authorName
+
+6.
+
+SELECT ?title
+WHERE {
+    ?book a :Book ;
+          :title ?title ;
+          :hasGenre ?genre .
+    ?genre rdfs:label "Adventure" .
+}
+ORDER BY ?title

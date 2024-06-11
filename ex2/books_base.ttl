@@ -1,0 +1,210 @@
+@prefix : <http://rpcw.di.uminho.pt/2024/untitled-ontology-19/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://rpcw.di.uminho.pt/2024/untitled-ontology-19/> .
+
+<http://rpcw.di.uminho.pt/2024/untitled-ontology-19> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-19#hasAuthor
+:hasAuthor rdf:type owl:ObjectProperty ;
+           rdfs:domain :Book ;
+           rdfs:range :Author .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-19#hasAward
+:hasAward rdf:type owl:ObjectProperty ;
+          rdfs:domain :Book ;
+          rdfs:range :Award .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-19#hasCharacter
+:hasCharacter rdf:type owl:ObjectProperty ;
+              rdfs:domain :Book ;
+              rdfs:range :Character .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-19#hasFormat
+:hasFormat rdf:type owl:ObjectProperty ;
+           rdfs:domain :Book ;
+           rdfs:range :Format .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-19#hasGenre
+:hasGenre rdf:type owl:ObjectProperty ;
+          rdfs:domain :Book ;
+          rdfs:range :Genre .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-19#hasSetting
+:hasSetting rdf:type owl:ObjectProperty ;
+            rdfs:domain :Book ;
+            rdfs:range :Setting .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-19#publichedBy
+:publichedBy rdf:type owl:ObjectProperty ;
+             rdfs:domain :Book ;
+             rdfs:range :Publisher .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-19#bbeScore
+:bbeScore rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Book ;
+          rdfs:range xsd:int .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-19#bbeVotes
+:bbeVotes rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Book ;
+          rdfs:range xsd:int .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-19#bookId
+:bookId rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Book ;
+        rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-19#coverImg
+:coverImg rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Book ;
+          rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-19#description
+:description rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Book ;
+             rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-19#firstPublishDate
+:firstPublishDate rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Book ;
+                  rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-19#isbn
+:isbn rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Book ;
+      rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-19#language
+:language rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Book ;
+          rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-19#lastName
+:lastName rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Author ;
+          rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-19#likedPercent
+:likedPercent rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Book ;
+              rdfs:range xsd:float .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-19#name
+:name rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Character ;
+      rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-19#numRatings
+:numRatings rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Book ;
+            rdfs:range xsd:int .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-19#pages
+:pages rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Book ;
+       rdfs:range xsd:int .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-19#price
+:price rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Book ;
+       rdfs:range xsd:float .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-19#publishDate
+:publishDate rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Book ;
+             rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-19#rating
+:rating rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Book ;
+        rdfs:range xsd:float .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-19#series
+:series rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Book ;
+        rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-19#title
+:title rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Book ;
+       rdfs:range xsd:string .
+
+
+###  http://www.w3.org/2002/07/owl#topDataProperty
+owl:topDataProperty rdfs:domain :Character ;
+                    rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-19#Author
+:Author rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-19#Award
+:Award rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-19#Book
+:Book rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-19#Character
+:Character rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-19#Format
+:Format rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-19#Genre
+:Genre rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-19#Publisher
+:Publisher rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-19#Setting
+:Setting rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
