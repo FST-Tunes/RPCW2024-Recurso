@@ -1,11 +1,15 @@
 1.
 
+PREFIX : <http://rpcw.di.uminho.pt/2024/untitled-ontology-18/>
+
 SELECT (COUNT(?lingua) AS ?numLinguas)
 WHERE {
   :Eduardo :fluenteEm ?lingua .
 }
 
 2.
+
+PREFIX : <http://rpcw.di.uminho.pt/2024/untitled-ontology-18/>
 
 SELECT ?estudante
 WHERE {
@@ -14,12 +18,16 @@ WHERE {
 
 3.
 
+PREFIX : <http://rpcw.di.uminho.pt/2024/untitled-ontology-18/>
+
 SELECT (COUNT(DISTINCT ?individuo) AS ?numIndividuos)
 WHERE {
   ?individuo rdf:type owl:NamedIndividual .
 }
 
 4.
+
+PREFIX : <http://rpcw.di.uminho.pt/2024/untitled-ontology-18/>
 
 SELECT ?nome ?curso ?universidade ?nacionalidade ?amigo
 WHERE {

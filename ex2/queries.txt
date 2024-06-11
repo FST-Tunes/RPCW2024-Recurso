@@ -1,55 +1,63 @@
 1.
 
-SELECT (COUNT(?book) AS ?numBooks)
+PREFIX : <http://rpcw.di.uminho.pt/2024/untitled-ontology-19/>
+
+SELECT (COUNT(DISTINCT ?book) AS ?numberOfBooks)
 WHERE {
-  ?book rdf:type :Book .
+  ?book a ?type .
 }
 
 2.
 
+PREFIX : <http://rpcw.di.uminho.pt/2024/untitled-ontology-19/>
+
 SELECT ?title
 WHERE {
-    ?book a :Book ;
-          :title ?title ;
-          :hasAuthor ?author .
-    ?author :lastName "Austen" .
+  ?book :author ?author .
+  ?book :title ?title .
+  FILTER(CONTAINS(LCASE(?author), "austen"))
 }
 ORDER BY ?title
 
+
 3.
 
-SELECT ?genre (COUNT(?book) AS ?numBooks)
+PREFIX : <http://rpcw.di.uminho.pt/2024/untitled-ontology-19/>
+
+SELECT ?genre (COUNT(?book) AS ?numberOfBooks)
 WHERE {
-    ?book a :Book ;
-          :hasGenre ?genre .
+  ?book :genres ?genre .
 }
 GROUP BY ?genre
 ORDER BY ?genre
 
+
 4.
 
-SELECT ?characterName (GROUP_CONCAT(?title; SEPARATOR=", ") AS ?books)
+PREFIX : <http://rpcw.di.uminho.pt/2024/untitled-ontology-19/>
+
+SELECT ?character ?book
 WHERE {
-    ?book a :Book ;
-          :title ?title ;
-          :hasCharacter ?character .
-    ?character :name ?characterName .
+  ?book :characters ?character .
 }
-GROUP BY ?characterName
-ORDER BY ?characterName
+ORDER BY ?character
+
 
 5.
 
-SELECT ?authorName (COUNT(?book) AS ?numBooks)
+PREFIX : <http://rpcw.di.uminho.pt/2024/untitled-ontology-19/>
+
+SELECT ?author (COUNT(?book) AS ?numberOfBooks)
 WHERE {
-    ?book a :Book ;
-          :hasAuthor ?author .
-    ?author :lastName ?authorName .
+  ?book :author ?author .
 }
-GROUP BY ?authorName
-ORDER BY ?authorName
+GROUP BY ?author
+ORDER BY ?author
+
 
 6.
+
+PREFIX : <http://rpcw.di.uminho.pt/2024/untitled-ontology-19/>
 
 SELECT ?title
 WHERE {

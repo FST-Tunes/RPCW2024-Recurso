@@ -8,6 +8,6 @@ Exercício2:
 
 2. Nesta fase o dataset.json foi tratado pelo cleaner.py, apenas para tratar dos erros de encoding. Além disso, faltava um parêntese reto no final. O dataset usado para as seguintes questões será o clean_dataset.json.
 
-3. Esta fase 
+3. Nesta fase foram adicionadas as entidades. De notar que apenas foram adicionadas os atributos que seriam necessários para a especificação das queries do exercicio 4.
 
-4. Mesmo não terminando a fase anterior, foram especificas as queries sparql (em queries.txt) que poderiam ter sido utilizadas se a fase anterior tivesse sido finalizada. 
+4. Especificação das queries em queries.txt
