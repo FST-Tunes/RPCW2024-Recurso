@@ -1,0 +1,32 @@
+1.
+
+SELECT (COUNT(?lingua) AS ?numLinguas)
+WHERE {
+  :Eduardo :fluenteEm ?lingua .
+}
+
+2.
+
+SELECT ?estudante
+WHERE {
+  ?estudante :estudanteFrequentaCurso :cursoAlemao .
+}
+
+3.
+
+SELECT (COUNT(DISTINCT ?individuo) AS ?numIndividuos)
+WHERE {
+  ?individuo rdf:type owl:NamedIndividual .
+}
+
+4.
+
+SELECT ?nome ?curso ?universidade ?nacionalidade ?amigo
+WHERE {
+  :Hannah :nome ?nome .
+  :Hannah :estudanteFrequentaCurso ?curso .
+  :Hannah :pessoaEstaNaUniversidade ?universidade .
+  :Hannah :temNacionalidade ?nacionalidade .
+  OPTIONAL { :Hannah :eAmigoDe ?amigo . }
+}
+

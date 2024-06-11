@@ -1,0 +1,269 @@
+@prefix : <http://rpcw.di.uminho.pt/2024/untitled-ontology-18/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://rpcw.di.uminho.pt/2024/untitled-ontology-18/> .
+
+<http://rpcw.di.uminho.pt/2024/untitled-ontology-18> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#carreiraNaUniversidade
+:carreiraNaUniversidade rdf:type owl:ObjectProperty ;
+                        rdfs:domain :Carreira ;
+                        rdfs:range :Universidade .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#cidadeDeOrigem
+:cidadeDeOrigem rdf:type owl:ObjectProperty ;
+                rdfs:domain :Pessoa ;
+                rdfs:range :Cidade .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#cursoLecionadoPorProfessor
+:cursoLecionadoPorProfessor rdf:type owl:ObjectProperty ;
+                            rdfs:domain :Curso ;
+                            rdfs:range :Professor .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#cursoNaUniversidade
+:cursoNaUniversidade rdf:type owl:ObjectProperty ;
+                     rdfs:domain :Curso ;
+                     rdfs:range :Universidade .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#eAmigoDe
+:eAmigoDe rdf:type owl:ObjectProperty ,
+                   owl:SymmetricProperty ;
+          rdfs:domain :Estudante ;
+          rdfs:range :Estudante .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#estudanteFrequentaCurso
+:estudanteFrequentaCurso rdf:type owl:ObjectProperty ;
+                         rdfs:domain :Estudante ;
+                         rdfs:range :Curso .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#fluenteEm
+:fluenteEm rdf:type owl:ObjectProperty ;
+           rdfs:domain :Pessoa ;
+           rdfs:range :Linguagem .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#pessoaEstaNaUniversidade
+:pessoaEstaNaUniversidade rdf:type owl:ObjectProperty ;
+                          rdfs:domain :Pessoa ;
+                          rdfs:range :Universidade .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#professorLecionaCurso
+:professorLecionaCurso rdf:type owl:ObjectProperty ;
+                       rdfs:domain :Professor ;
+                       rdfs:range :Curso .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#professorTemCarreira
+:professorTemCarreira rdf:type owl:ObjectProperty ;
+                      rdfs:domain :Professor ;
+                      rdfs:range :Carreira .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#temNacionalidade
+:temNacionalidade rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Pessoa ;
+                  rdfs:range :Pais .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#horario
+:horario rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Curso ;
+         rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#idade
+:idade rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Pessoa ;
+       rdfs:range xsd:int .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#localizacao
+:localizacao rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Curso ;
+             rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#nome
+:nome rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Pessoa ;
+      rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#Carreira
+:Carreira rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#Cidade
+:Cidade rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#Curso
+:Curso rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#Estudante
+:Estudante rdf:type owl:Class ;
+           rdfs:subClassOf :Pessoa .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#Linguagem
+:Linguagem rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#Pais
+:Pais rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#Pessoa
+:Pessoa rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#Professor
+:Professor rdf:type owl:Class ;
+           rdfs:subClassOf :Pessoa .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#Universidade
+:Universidade rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#Alemanha
+:Alemanha rdf:type owl:NamedIndividual ,
+                   :Pais .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#Alemao
+:Alemao rdf:type owl:NamedIndividual ,
+                 :Linguagem .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#Ana
+:Ana rdf:type owl:NamedIndividual ,
+              :Estudante ;
+     :eAmigoDe :Carlos ,
+               :Eduardo ;
+     :estudanteFrequentaCurso :cursoAlemao ;
+     :pessoaEstaNaUniversidade :UniversidadeDoMinho ;
+     :temNacionalidade :Portugal ;
+     :nome "Ana" .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#Carlos
+:Carlos rdf:type owl:NamedIndividual ,
+                 :Estudante ;
+        :eAmigoDe :Eduardo ;
+        :estudanteFrequentaCurso :cursoAlemao ;
+        :pessoaEstaNaUniversidade :UniversidadeDoMinho ;
+        :temNacionalidade :Portugal ;
+        :nome "Carlos" .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#Eduardo
+:Eduardo rdf:type owl:NamedIndividual ,
+                  :Estudante ;
+         :cidadeDeOrigem :Porto ;
+         :eAmigoDe :Hannah ;
+         :estudanteFrequentaCurso :cursoAlemao ;
+         :pessoaEstaNaUniversidade :UniversidadeDoMinho ;
+         :temNacionalidade :Portugal ;
+         :idade "21"^^xsd:int ;
+         :nome "Eduardo" .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#EscolaDeLetrasArtesCienciasHumanas
+:EscolaDeLetrasArtesCienciasHumanas rdf:type owl:NamedIndividual ,
+                                             :Carreira ;
+                                    :carreiraNaUniversidade :UniversidadeDoMinho .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#Espanhol
+:Espanhol rdf:type owl:NamedIndividual ,
+                   :Linguagem .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#Hannah
+:Hannah rdf:type owl:NamedIndividual ,
+                 :Estudante ;
+        :estudanteFrequentaCurso :cursoBiotecnologia ;
+        :pessoaEstaNaUniversidade :UniversidadeDoMinho ;
+        :temNacionalidade :Alemanha ;
+        :nome "Hannah" .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#HelmutRatz
+:HelmutRatz rdf:type owl:NamedIndividual ,
+                     :Professor ;
+            :pessoaEstaNaUniversidade :UniversidadeDoMinho ;
+            :professorLecionaCurso :cursoAlemao ;
+            :professorTemCarreira :EscolaDeLetrasArtesCienciasHumanas ;
+            :temNacionalidade :Alemanha ;
+            :nome "HelmutRatz" .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#Ingles
+:Ingles rdf:type owl:NamedIndividual ,
+                 :Linguagem .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#Porto
+:Porto rdf:type owl:NamedIndividual ,
+                :Cidade .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#Portugal
+:Portugal rdf:type owl:NamedIndividual ,
+                   :Pais .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#Portugues
+:Portugues rdf:type owl:NamedIndividual ,
+                    :Linguagem .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#UniversidadeDoMinho
+:UniversidadeDoMinho rdf:type owl:NamedIndividual ,
+                              :Universidade .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#cursoAlemao
+:cursoAlemao rdf:type owl:NamedIndividual ,
+                      :Curso ;
+             :cursoLecionadoPorProfessor :HelmutRatz ;
+             :cursoNaUniversidade :UniversidadeDoMinho ;
+             :horario "Sexta feira" ;
+             :localizacao "Centro de Línguas da Universidade" .
+
+
+###  http://rpcw.di.uminho.pt/2024/untitled-ontology-18#cursoBiotecnologia
+:cursoBiotecnologia rdf:type owl:NamedIndividual ,
+                             :Curso ;
+                    :cursoNaUniversidade :UniversidadeDoMinho .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
